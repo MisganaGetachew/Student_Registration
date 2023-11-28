@@ -157,7 +157,7 @@ public class Main {
                         } else {
                             System.out.println("insert Id of student to be deleted! ");
                             String student_id = input_value.next();
-                            // admin.find_student(reg.get_student_objects(), );
+
                             admin.delete_student(student.get_student_objects(), student_id);
                         }
 
@@ -168,15 +168,15 @@ public class Main {
                         int dep_id = input_value.nextInt(4);
                         if (dep_id == 1) {
 
-                            admin.add_course(student, dep_id, input_value, input_value);
+                            admin.add_course(student, dep_id);
 
                         }
 
                         else if (dep_id == 2) {
-                            admin.add_course(student, dep_id, input_value, input_value);
+                            admin.add_course(student, dep_id);
 
                         } else if (dep_id == 3) {
-                            admin.add_course(student, dep_id, input_value, input_value);
+                            admin.add_course(student, dep_id);
 
                         } else {
                             System.out.println("Plesase insert a valid input");

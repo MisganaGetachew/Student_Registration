@@ -39,9 +39,6 @@ class Student extends Registration {
 
     public void course() {
 
-        // initiallize course hashmap so that
-        // super.get_course();
-
     }
 
 }

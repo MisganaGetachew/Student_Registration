@@ -8,7 +8,8 @@ public class Admin {
     // things Admin can do
     // add/remove cources
     // see List of registerd students
-    // Remove Students
+    // Add/Remove Students
+    // find a student with specific ID
 
     public void output(ArrayList<Registration> all_students) {
 
@@ -57,7 +58,6 @@ public class Admin {
                 exists = true;
                 all_students.remove(student);
                 System.out.println(student.get_first_name() + " Removed from Registerd List succesfully! ");
-                // this.testing_delete_course(exists);
 
                 break;
 
@@ -65,19 +65,20 @@ public class Admin {
 
         }
 
-        if (exists) {
+        if (!exists) {
             System.out.println("student with the provided ID couldn't be found");
 
-            // this.testing_delete_course(exists);
         }
     }
 
+    // a helping function to do some unit test
     boolean testing_delete_course() {
 
         return this.deleted;
 
     }
 
+    // a function to add cources
     void add_course(Registration student, int val) {
 
         Scanner input_value = new Scanner(System.in);
@@ -118,9 +119,8 @@ public class Admin {
         }
     }
 
+    // a method to remove a cource
     void remove_course(Registration student, int val, Scanner input_value) {
-
-        // input_value = new Scanner(System.in);
 
         if (val == 1) {
             student.initiallize_course_swe();
@@ -175,6 +175,7 @@ public class Admin {
         }
     }
 
+    // a method to add students
     void add_student(ArrayList<Registration> all_students, Registration student) {
         Boolean exists = false;
         String taken_id = "";

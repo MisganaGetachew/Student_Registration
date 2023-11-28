@@ -5,9 +5,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 abstract class Registration {
-    // ArrayList<Student> grades = new ArrayList<>;
+
     private static ArrayList<Registration> students_list = new ArrayList<>();
-    // Student[] students_array = new Student[100];
     private static HashMap<String, String> course_list_swe = new HashMap<String, String>();
     private static HashMap<String, String> course_list_cmp_eng = new HashMap<String, String>();
     private static HashMap<String, String> course_list_econ = new HashMap<String, String>();
@@ -24,17 +23,12 @@ abstract class Registration {
 
     public abstract int get_year();
 
-    // public void output() {
-    // System.out.println("abstracted class's method");
-    // };
-
     public void set_student_object(Registration student) {
 
         students_list.add(student);
 
     }
 
-    // for the admin to see all registerd students
     public ArrayList<Registration> get_student_objects() {
 
         return students_list;
