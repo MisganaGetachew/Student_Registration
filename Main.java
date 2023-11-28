@@ -232,7 +232,7 @@ public class Main {
                 }
 
             } catch (InputMismatchException ex) {
-                System.out.println("plesase insert a number value for ");
+                System.out.println("plesase insert the expected number value");
                 continue;
 
             } catch (Exception e) {
