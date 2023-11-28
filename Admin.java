@@ -12,23 +12,13 @@ public class Admin {
 
     public void output(ArrayList<Registration> all_students) {
 
-        System.out.println(
-                """
-
-
-                        --------------------------------------- R E G I S T T E R E D  S T U D E N T 'S   L I S T --------------------------------
-
-                        | ID  | FRIST NAME | LAST NAME | DEPARTMENT | YEAR
-                        """);
+        System.out.print("" +
+                "--------------------------------------- R E G I S T T E R E D  S T U D E N T 'S   L I S T --------------------------------\n"
+                + "| ID  | FRIST NAME | LAST NAME | DEPARTMENT | YEAR\n");
         for (Registration student : all_students) {
 
             System.out.println(student.get_id() + "  " + student.get_first_name() + "  " + student.get_last_name()
                     + "  " + student.get_department() + "  " + student.get_year() + "  ");
-
-            System.out.println(
-                    """
-
-                            """);
 
         }
     }
@@ -44,6 +34,7 @@ public class Admin {
                 exists = true;
                 System.out.println(student.get_id() + " " + student.get_first_name() + " " + student.get_last_name()
                         + " " + student.get_department() + " " + student.get_year());
+                break;
 
             }
 
@@ -55,6 +46,8 @@ public class Admin {
 
     }
 
+    boolean deleted;
+
     void delete_student(ArrayList<Registration> all_students, String Id) {
         Boolean exists = false;
         for (Registration student : all_students) {
@@ -64,15 +57,24 @@ public class Admin {
                 exists = true;
                 all_students.remove(student);
                 System.out.println(student.get_first_name() + " Removed from Registerd List succesfully! ");
+                // this.testing_delete_course(exists);
+
                 break;
 
             }
 
         }
 
-        if (!exists) {
+        if (exists) {
             System.out.println("student with the provided ID couldn't be found");
+
+            // this.testing_delete_course(exists);
         }
+    }
+
+    boolean testing_delete_course() {
+
+        return this.deleted;
 
     }
 
@@ -116,9 +118,9 @@ public class Admin {
         }
     }
 
-    void remove_course(Registration student, int val) {
+    void remove_course(Registration student, int val, Scanner input_value) {
 
-        Scanner input_value = new Scanner(System.in);
+        // input_value = new Scanner(System.in);
 
         if (val == 1) {
             student.initiallize_course_swe();
@@ -126,6 +128,7 @@ public class Admin {
             String code = input_value.next();
             if (student.get_course_swe().containsKey(code)) {
                 student.get_course_swe().remove(code);
+                deleted = true;
                 System.out.println("Course deleted successully!!  ");
 
             } else {
@@ -142,9 +145,11 @@ public class Admin {
             String code = input_value.next();
             if (student.get_course_cmp_eng().containsKey(code)) {
                 student.get_course_cmp_eng().remove(code);
+                deleted = true;
                 System.out.println("Course deleted successully!!  ");
 
             } else {
+                deleted = false;
                 System.out.println("oops the provided code doesn't refer to any of the subjects stored");
 
             }
@@ -158,9 +163,11 @@ public class Admin {
             String code = input_value.next();
             if (student.get_course_econ().containsKey(code)) {
                 student.get_course_econ().remove(code);
+                deleted = true;
                 System.out.println("Course deleted successully!!  ");
 
             } else {
+                deleted = false;
                 System.out.println("oops the provided code doesn't refer to any of the subjects stored");
 
             }

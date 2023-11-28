@@ -168,15 +168,15 @@ public class Main {
                         int dep_id = input_value.nextInt(4);
                         if (dep_id == 1) {
 
-                            admin.add_course(student, dep_id);
+                            admin.add_course(student, dep_id, input_value, input_value);
 
                         }
 
                         else if (dep_id == 2) {
-                            admin.add_course(student, dep_id);
+                            admin.add_course(student, dep_id, input_value, input_value);
 
                         } else if (dep_id == 3) {
-                            admin.add_course(student, dep_id);
+                            admin.add_course(student, dep_id, input_value, input_value);
 
                         } else {
                             System.out.println("Plesase insert a valid input");
@@ -192,14 +192,14 @@ public class Main {
                         int dep_id = input_value.nextInt(4);
                         if (dep_id == 1) {
 
-                            admin.remove_course(student, dep_id);
+                            admin.remove_course(student, dep_id, input_value);
                         }
 
                         else if (dep_id == 2) {
-                            admin.remove_course(student, dep_id);
+                            admin.remove_course(student, dep_id, input_value);
 
                         } else if (dep_id == 3) {
-                            admin.remove_course(student, dep_id);
+                            admin.remove_course(student, dep_id, input_value);
 
                         } else {
                             System.out.println("Plesase insert a valid input");
