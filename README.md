@@ -4,5 +4,6 @@ It supports Student and also Admin users. The student can register for the liste
 And The admin has all the right to Add cources or Remove Them, Add students, or Remove Them, Find student and see All students Registerd Regardless of their Department and Year.
 
 # Feature
-implemented almost all OOP(Object Oriented Programming) Concepts like Abstraction, Encapsulation, and Inheritance. 
+Designed Classes based on the project and implemented almost all OOP(Object Oriented Programming) Concepts like Abstraction, Encapsulation, and Inheritance. 
 and wrote A test using the Junit java Testing Framework. 
+
